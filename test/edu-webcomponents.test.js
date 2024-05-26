@@ -19,7 +19,9 @@ describe('EduWebcomponents', () => {
   });
 
   it('can override the header via attribute', async () => {
-    const el = await fixture(html`<edu-webcomponents header="attribute header"></edu-webcomponents>`);
+    const el = await fixture(
+      html`<edu-webcomponents header="attribute header"></edu-webcomponents>`
+    );
 
     expect(el.header).to.equal('attribute header');
   });
