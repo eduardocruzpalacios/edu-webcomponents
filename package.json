@@ -3,13 +3,12 @@
   "description": "Webcomponent edu-webcomponents following open-wc recommendations",
   "license": "MIT",
   "author": "edu-webcomponents",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./edu-webcomponents.js": "./edu-webcomponents.js"
+    ".": "./index.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",

@@ -1,6 +1,6 @@
-# \<edu-webcomponents>
+# Edu web components library
 
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+This web components library follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
 
@@ -12,10 +12,10 @@ npm i edu-webcomponents
 
 ```html
 <script type="module">
-  import 'edu-webcomponents/edu-webcomponents.js';
+  import 'edu-webcomponents/index.js';
 </script>
 
-<edu-webcomponents></edu-webcomponents>
+<webcomponent-tagname></webcomponent-tagname>
 ```
 
 ## Linting and formatting
