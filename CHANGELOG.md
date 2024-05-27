@@ -5,3 +5,6 @@
 
 ## 1.1.0 - 2024-05-26
 - Setup Husky
+
+## 1.2.0 - 2024-05-27
+- Setup the repository to be a library of web components

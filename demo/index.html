@@ -13,14 +13,14 @@
 
   <script type="module">
     import { html, render } from 'lit';
-    import '../edu-webcomponents.js';
+    import '../index.js';
 
-    const header = 'Hello owc World!';
+    const textButton = 'This is a button';
     render(
       html`
-        <edu-webcomponents .header=${header}>
-          some light-dom
-        </edu-webcomponents>
+        <h1>Edu web components library</h1>
+        <edu-button .text=${textButton}>
+        </edu-button>
       `,
       document.querySelector('#demo')
     );

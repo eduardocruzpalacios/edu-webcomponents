@@ -1,1 +1,1 @@
-export { EduWebcomponents } from './src/EduWebcomponents.js';
+export { EduButton } from './src/EduButton.js';
