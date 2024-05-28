@@ -8,3 +8,6 @@
 
 ## 1.2.0 - 2024-05-27
 - Setup the repository to be a library of web components
+
+## 1.3.0 - 2024-05-28
+- Setup Storybook
