@@ -25,3 +25,4 @@ custom-elements.json
 
 # Husky
 .husky
+*storybook.log
