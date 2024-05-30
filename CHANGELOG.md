@@ -14,3 +14,6 @@
 
 ## 1.4.0 - 2024-05-30
 - Setup GitHub Actions to publish Storybook built artifacts in GitHub Pages
+
+## 1.5.0 - 2024-05-30
+- Add docs to enable the deployment of GitHub Actions artifacts into GitHub Pages
