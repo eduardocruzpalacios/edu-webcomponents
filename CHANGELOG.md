@@ -11,3 +11,6 @@
 
 ## 1.3.0 - 2024-05-28
 - Setup Storybook
+
+## 1.4.0 - 2024-05-30
+- Setup GitHub Actions to publish Storybook built artifacts in GitHub Pages
