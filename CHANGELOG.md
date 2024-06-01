@@ -17,3 +17,6 @@
 
 ## 1.5.0 - 2024-05-30
 - Add docs to enable the deployment of GitHub Actions artifacts into GitHub Pages
+
+## 1.6.0 - 2024-06-01
+- Setup GitHub Actions to tag and release after merge into main
