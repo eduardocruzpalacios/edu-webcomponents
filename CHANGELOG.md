@@ -20,3 +20,6 @@
 
 ## 1.6.0 - 2024-06-01
 - Setup GitHub Actions to tag and release after merge into main
+
+## 1.7.0 - 2024-06-02
+- Setup GitHub Actions to publish packages in npm registry
