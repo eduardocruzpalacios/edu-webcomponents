@@ -23,3 +23,6 @@
 
 ## 1.7.0 - 2024-06-02
 - Setup GitHub Actions to publish packages in npm registry
+
+## 1.8.0 - 2024-06-15
+- Setup [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to manage updates of dependencies of package.json
