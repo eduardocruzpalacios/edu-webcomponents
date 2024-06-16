@@ -26,3 +26,6 @@
 
 ## 1.8.0 - 2024-06-15
 - Setup [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to manage updates of dependencies of package.json
+
+## 1.9.0 - 2024-06-16
+- Update dependencies
