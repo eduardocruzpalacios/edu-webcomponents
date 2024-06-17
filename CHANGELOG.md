@@ -32,3 +32,4 @@
 
 ## 1.10.0 - 2024-06-17
 - Add keywords
+- Add keywords to the repository
