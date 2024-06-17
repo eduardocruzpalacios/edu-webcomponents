@@ -29,3 +29,6 @@
 
 ## 1.9.0 - 2024-06-16
 - Update dependencies
+
+## 1.10.0 - 2024-06-17
+- Add keywords
