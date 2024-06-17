@@ -1,9 +1,17 @@
 {
   "name": "edu-webcomponents",
   "description": "Webcomponent edu-webcomponents following open-wc recommendations",
+    "keywords": [
+      "web components library",
+      "web components catalog",
+      "webcomponents library",
+      "webcomponents catalog",
+      "web components",
+      "webcomponents"
+    ],
   "license": "MIT",
   "author": "edu-webcomponents",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
