@@ -11,7 +11,7 @@
     ],
   "license": "MIT",
   "author": "edu-webcomponents",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
