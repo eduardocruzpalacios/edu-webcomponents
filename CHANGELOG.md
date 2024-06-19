@@ -32,3 +32,6 @@
 
 ## 1.10.0 - 2024-06-17
 - Add keywords to the repository
+
+## 1.11.0 - 2024-06-19
+- Add provenance to packages in npm registry
