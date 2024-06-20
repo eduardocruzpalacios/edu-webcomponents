@@ -35,6 +35,9 @@
 
 ## 1.11.0 - 2024-06-19
 - Add provenance to packages in npm registry
-- 
+
 ## 1.12.0 - 2024-06-20
 - Update dependencies
+
+## 1.13.0 - 2024-06-20
+- Fix provenance when publishing packages to npm registry
