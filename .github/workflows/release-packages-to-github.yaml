@@ -15,5 +15,5 @@ jobs:
         uses: dexwritescode/release-on-merge-action@v1
         with:
           version-increment-strategy: minor
-          initial-version: '1.6.0'
+          initial-version: '1.15.4'
           tag-prefix: v
