@@ -5,7 +5,7 @@ export default {
   title: 'Edu web components/EduButton',
   tags: ['autodocs'],
   render: ({ text, disabled }) =>
-    html`<edu-button .text=${text} disabled=${disabled}></edu-button>`,
+    html`<edu-button .text=${text} ?disabled=${disabled}></edu-button>`,
   argTypes: {
     text: {
       control: 'text',
