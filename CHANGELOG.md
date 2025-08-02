@@ -44,3 +44,6 @@
 
 ## 1.14.0 - 2024-06-21
 - Update docs of publishing packages to npm registry with provenance
+- 
+## 1.15.0 - 2025-08-02
+- Improve EduButton component by adding aria-label and type attributes, disabled state and styles
