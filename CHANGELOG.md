@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.15.2 - 2025-08-02
+- Fix EduButton is always disabled
+
 ## 1.15.1 - 2025-08-02
 - Fix EduButton is always disabled
 
