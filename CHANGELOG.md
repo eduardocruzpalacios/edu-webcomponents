@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.17.0 - 2025-08-02
+- Make releasing and tagging use the version from package.json
+
 ## 1.16.1 - 2025-08-02
 - Fix versioning of release
 
