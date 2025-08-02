@@ -4,12 +4,18 @@ import '../EduButton.js';
 export default {
   title: 'Edu web components/EduButton',
   tags: ['autodocs'],
-  render: ({ text }) => html`<edu-button .text=${text}></edu-button>`,
+  render: ({ text, disabled }) =>
+    html`<edu-button .text=${text} disabled=${disabled}></edu-button>`,
   argTypes: {
     text: {
       control: 'text',
       description: 'Overwritten button text',
       name: 'text',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Disable button',
+      name: 'disabled',
     },
   },
   args: {
@@ -24,5 +30,11 @@ export const DefaultButton = {
 export const ButtonWithTextChanged = {
   args: {
     text: 'Custom text',
+  },
+};
+
+export const ButtonDisabled = {
+  args: {
+    disabled: true,
   },
 };
