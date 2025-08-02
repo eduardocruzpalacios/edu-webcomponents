@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.15.1 - 2025-08-02
+- Fix EduButton is always disabled
+
 ## 1.15.0 - 2025-08-02
 - Improve EduButton component by adding aria-label and type attributes, disabled state and styles
 
