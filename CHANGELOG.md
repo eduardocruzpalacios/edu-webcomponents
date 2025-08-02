@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.15.4 - 2025-08-02
+- Fix versioning of release
+
 ## 1.15.3 - 2025-08-02
 - Fix EduButton is always disabled
 
