@@ -39,6 +39,7 @@ export class EduButton extends LitElement {
     this.text = 'Default text';
     this.type = 'button';
     this.ariaLabel = this.text;
+    this.disabled = true;
   }
 
   render() {
