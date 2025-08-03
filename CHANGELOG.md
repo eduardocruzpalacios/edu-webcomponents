@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## 1.17.2 - 2025-08-03
+- Make values of colors of EduButton not defined in the component, but as constants accessible by the entire web components catalog
+
 ## 1.17.1 - 2025-08-02
-- Format code 
+- Format code
 
 ## 1.17.0 - 2025-08-02
 - Make releasing and tagging use the version from package.json
