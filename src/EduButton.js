@@ -1,31 +1,35 @@
 import { html, css, LitElement } from 'lit';
+import { colorsConstants } from './stylesConstants.js';
 
 export class EduButton extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
+  static styles = [
+    colorsConstants,
+    css`
+      :host {
+        display: block;
+      }
 
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      background-color: #007acc;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
-    }
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--primary);
+        color: var(--primaryForeground);
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
 
-    button:hover:not(:disabled) {
-      background-color: #005fa3;
-    }
+      button:hover:not(:disabled) {
+        background-color: var(--primaryHover);
+      }
 
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-  `;
+      button:disabled {
+        background-color: var(--disabled);
+        cursor: not-allowed;
+      }
+    `,
+  ];
 
   static properties = {
     text: { type: String },
