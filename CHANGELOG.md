@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.18.0 - 2025-08-05
+- Add EduTooltip web component
+
 ## 1.17.3 - 2025-08-04
 - Update docs
 

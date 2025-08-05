@@ -4,7 +4,9 @@ export const colorsConstants = css`
   :host {
     --primary: #007acc;
     --primaryHover: #005fa3;
-    --primaryForeground: white;
+    --primaryForeground: #fff;
+
+    --blackLight: #333;
 
     --disabled: #ccc;
   }
