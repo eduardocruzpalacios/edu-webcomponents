@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.19.0 - 2025-08-06
+- Add EduProgressBar web component
+
 ## 1.18.0 - 2025-08-05
 - Add EduTooltip web component
 
