@@ -16,6 +16,11 @@ export default {
       description: 'Sets the percentage to which the progress bar is filled in',
       name: 'value',
     },
+    max: {
+      value: 'number',
+      description: 'Sets the value to which the percentage is calculated',
+      name: 'max',
+    },
     showLabel: {
       value: 'boolean',
       description: 'Shows label of percentage filled in',
@@ -24,6 +29,8 @@ export default {
   },
   args: {
     value: 0,
+    max: 100,
+    showLabel: false,
   },
 };
 

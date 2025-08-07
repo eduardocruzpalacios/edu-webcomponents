@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.19.1 - 2025-08-07
+- Improve docs for stories of EduProgressBar
+
 ## 1.19.0 - 2025-08-06
 - Add EduProgressBar web component
 
