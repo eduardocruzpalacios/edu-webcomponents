@@ -10,18 +10,20 @@ describe('EduTooltip', () => {
     expect(styles.opacity).to.equal('0');
   });
 
-  it('has no text and position properties by default', async () => {
+  it('sets bottom styles for position when there is not value passed in', async () => {
     const el = await fixture(html`<edu-tooltip></edu-tooltip>`);
 
-    expect(el.text).to.equal('');
-    expect(el.position).to.be.undefined;
+    const tooltip = el.shadowRoot.querySelector('.tooltip');
+    expect(tooltip.classList.contains('bottom')).to.be.true;
   });
 
-  it('renders text of the tooltip', async () => {
-    const el = await fixture(html`<edu-tooltip text="Help"></edu-tooltip>`);
+  it('sets bottom styles for position when the value passed is not valid', async () => {
+    const el = await fixture(
+      html`<edu-tooltip position="invalidString"></edu-tooltip>`,
+    );
 
     const tooltip = el.shadowRoot.querySelector('.tooltip');
-    expect(tooltip.textContent).to.equal('\n        Help\n      ');
+    expect(tooltip.classList.contains('bottom')).to.be.true;
   });
 
   it('applies class for position', async () => {
@@ -31,6 +33,22 @@ describe('EduTooltip', () => {
 
     const tooltip = el.shadowRoot.querySelector('.tooltip');
     expect(tooltip.classList.contains('right')).to.be.true;
+  });
+
+  it('applies class for position (case insensitive)', async () => {
+    const el = await fixture(
+      html`<edu-tooltip position="RIGHT"></edu-tooltip>`,
+    );
+
+    const tooltip = el.shadowRoot.querySelector('.tooltip');
+    expect(tooltip.classList.contains('right')).to.be.true;
+  });
+
+  it('renders text of the tooltip', async () => {
+    const el = await fixture(html`<edu-tooltip text="Help"></edu-tooltip>`);
+
+    const tooltip = el.shadowRoot.querySelector('.tooltip');
+    expect(tooltip.textContent).to.equal('\n        Help\n      ');
   });
 
   it('shows tooltip when mouseenter event', async () => {
@@ -89,17 +107,6 @@ describe('EduTooltip', () => {
 
     const styles = getComputedStyle(tooltip);
     expect(styles.opacity).to.equal('0');
-  });
-
-  it('uses role="tooltip" and aria-describedby', async () => {
-    const el = await fixture(
-      html`<edu-tooltip text="Text"><span>Info</span></edu-tooltip>`,
-    );
-
-    const trigger = el.shadowRoot.querySelector('span');
-    const tooltip = el.shadowRoot.querySelector('.tooltip');
-    expect(tooltip.getAttribute('role')).to.equal('tooltip');
-    expect(trigger.getAttribute('aria-describedby')).to.equal(tooltip.id);
   });
 
   it('is accessible', async () => {

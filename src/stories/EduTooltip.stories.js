@@ -5,7 +5,7 @@ export default {
   title: 'Edu web components/EduTooltip',
   tags: ['autodocs'],
   render: ({ text, position }) =>
-    html`<edu-tooltip text=${text} position=${position}
+    html`<edu-tooltip .text=${text} .position=${position}
       ><p>Hello, place the mouse over this text</p></edu-tooltip
     >`,
   argTypes: {
@@ -17,20 +17,21 @@ export default {
     position: {
       control: 'text',
       description:
-        'Position of the tooltip respect to the element making it visible',
+        'Position of the tooltip respect to the element making it visible: top / bottom / left / right',
       name: 'position',
     },
   },
   args: {
     text: 'Custom text',
+    position: '',
   },
 };
 
-export const EduTooltipDefaultPositionBottomLeft = {
+export const EduTooltipDefaultPositionBottom = {
   args: {},
 };
 
-export const EduTooltipInvalidPositionPropBottomLeft = {
+export const EduTooltipInvalidPositionPropBottom = {
   args: {
     position: 'Edu',
   },
@@ -57,5 +58,11 @@ export const EduTooltipPositionRight = {
 export const EduTooltipPositionLeft = {
   args: {
     position: 'left',
+  },
+};
+
+export const EduTooltipPositionLeftCaseInsensitive = {
+  args: {
+    position: 'LEFT',
   },
 };

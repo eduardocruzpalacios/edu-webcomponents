@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.19.2 - 2025-08-08
+- Make EduTooltip have bottom position as default when the prop is not set or is set with invalid value
+
 ## 1.19.1 - 2025-08-07
 - Improve docs for stories of EduProgressBar
 

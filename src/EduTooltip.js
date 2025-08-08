@@ -1,6 +1,21 @@
 import { LitElement, html, css } from 'lit';
 import { colorsConstants } from './stylesConstants.js';
 
+const POSITION = {
+  BOTTOM: 'bottom',
+  TOP: 'top',
+  LEFT: 'left',
+  RIGHT: 'right',
+};
+
+function getPositions() {
+  return Object.values(POSITION);
+}
+
+function isPositionValid(position) {
+  return getPositions().includes(position.toLowerCase());
+}
+
 export class EduTooltip extends LitElement {
   static properties = {
     text: { type: String },
@@ -10,9 +25,15 @@ export class EduTooltip extends LitElement {
 
   constructor() {
     super();
-    this.text = '';
-    this.visible = false;
     this._tooltipId = `tooltip-${Math.random().toString(36).slice(2)}`;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('position')) {
+      if (!isPositionValid(this.position)) {
+        this.position = POSITION.BOTTOM;
+      }
+    }
   }
 
   static styles = [
@@ -69,6 +90,9 @@ export class EduTooltip extends LitElement {
   ];
 
   render() {
+    const positionClass = this.position
+      ? this.position.toLocaleLowerCase()
+      : POSITION.BOTTOM;
     return html`
       <span
         tabindex="0"
@@ -82,7 +106,7 @@ export class EduTooltip extends LitElement {
       </span>
       <div
         id=${this._tooltipId}
-        class="tooltip ${this.position}"
+        class="tooltip ${positionClass}"
         role="tooltip"
       >
         ${this.text}
