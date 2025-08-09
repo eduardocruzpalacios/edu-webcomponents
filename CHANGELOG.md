@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.19.4 - 2025-08-09
+- Fix released package in GitHub is not published in npm registry
+
 ## 1.19.3 - 2025-08-09
 - Fix released package in GitHub is not published in npm registry
   
