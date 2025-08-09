@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.19.3 - 2025-08-09
+- Fix released package in GitHub is not published in npm registry
+  
 ## 1.19.2 - 2025-08-08
 - Make EduTooltip have bottom position as default when the prop is not set or is set with invalid value
 
