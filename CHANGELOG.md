@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.19.8 - 2025-08-10
+- Update documentation of releasing and publishing
+
 ## 1.19.7 - 2025-08-09
 - Fix versioning order in npm registry
 
