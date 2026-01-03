@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import '../EduButton.js';
+import './src/EduButton.js';
 
 export default {
   title: 'Edu web components/EduButton',
@@ -36,5 +36,8 @@ const defaultArgs = {
 };
 
 export const DefaultButton = createStory({ ...defaultArgs });
-export const ButtonWithTextChanged = createStory({ ...defaultArgs, text: 'Custom text' });
+export const ButtonWithTextChanged = createStory({
+  ...defaultArgs,
+  text: 'Custom text',
+});
 export const ButtonDisabled = createStory({ ...defaultArgs, disabled: true });

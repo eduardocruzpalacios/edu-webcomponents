@@ -19,7 +19,7 @@ describe('EduTooltip', () => {
 
   it('sets bottom styles for position when the value passed is not valid', async () => {
     const el = await fixture(
-      html`<edu-tooltip position="invalidString"></edu-tooltip>`,
+      html`<edu-tooltip position="invalidString"></edu-tooltip>`
     );
 
     const tooltip = el.shadowRoot.querySelector('.tooltip');
@@ -28,7 +28,7 @@ describe('EduTooltip', () => {
 
   it('applies class for position', async () => {
     const el = await fixture(
-      html`<edu-tooltip position="right"></edu-tooltip>`,
+      html`<edu-tooltip position="right"></edu-tooltip>`
     );
 
     const tooltip = el.shadowRoot.querySelector('.tooltip');
@@ -37,7 +37,7 @@ describe('EduTooltip', () => {
 
   it('applies class for position (case insensitive)', async () => {
     const el = await fixture(
-      html`<edu-tooltip position="RIGHT"></edu-tooltip>`,
+      html`<edu-tooltip position="RIGHT"></edu-tooltip>`
     );
 
     const tooltip = el.shadowRoot.querySelector('.tooltip');
@@ -53,7 +53,7 @@ describe('EduTooltip', () => {
 
   it('shows tooltip when mouseenter event', async () => {
     const el = await fixture(
-      html`<edu-tooltip text="Text"><span>Hover me</span></edu-tooltip>`,
+      html`<edu-tooltip text="Text"><span>Hover me</span></edu-tooltip>`
     );
 
     const trigger = el.shadowRoot.querySelector('span');
@@ -67,7 +67,7 @@ describe('EduTooltip', () => {
 
   it('hides tooltip when mouseleave event', async () => {
     const el = await fixture(
-      html`<edu-tooltip text="Text"><span>Hover me</span></edu-tooltip>`,
+      html`<edu-tooltip text="Text"><span>Hover me</span></edu-tooltip>`
     );
 
     const trigger = el.shadowRoot.querySelector('span');
@@ -82,7 +82,7 @@ describe('EduTooltip', () => {
 
   it('shows tooltip when focus event', async () => {
     const el = await fixture(
-      html`<edu-tooltip text="Text"><span>Focus</span></edu-tooltip>`,
+      html`<edu-tooltip text="Text"><span>Focus</span></edu-tooltip>`
     );
 
     const trigger = el.shadowRoot.querySelector('span');
@@ -96,7 +96,7 @@ describe('EduTooltip', () => {
 
   it('hides tooltip when blur event', async () => {
     const el = await fixture(
-      html`<edu-tooltip text="Text"><span>Focus</span></edu-tooltip>`,
+      html`<edu-tooltip text="Text"><span>Focus</span></edu-tooltip>`
     );
 
     const trigger = el.shadowRoot.querySelector('span');
@@ -111,7 +111,7 @@ describe('EduTooltip', () => {
 
   it('is accessible', async () => {
     const el = await fixture(
-      html`<edu-tooltip text="Text"><span>Trigger</span></edu-tooltip>`,
+      html`<edu-tooltip text="Text"><span>Trigger</span></edu-tooltip>`
     );
 
     await expect(el).to.be.accessible();
