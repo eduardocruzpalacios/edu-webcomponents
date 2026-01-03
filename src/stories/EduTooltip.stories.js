@@ -3,12 +3,19 @@ import '../EduTooltip.js';
 
 export default {
   title: 'Edu web components/EduTooltip',
-  tags: ['autodocs'],
-  render: ({ text, position }) =>
-    html`<edu-tooltip .text=${text} .position=${position}
-      ><p>Hello, place the mouse over this text</p></edu-tooltip
-    >`,
-  argTypes: {
+};
+
+const createStory = args => {
+  const story = ({ text, position } = args) => html`
+    <edu-tooltip .text=${text} .position=${position}>
+      <p>Hello, place the mouse over this text</p>
+    </edu-tooltip>
+  `;
+  story.parameters = {
+    controls: { expanded: true },
+    docs: { source: { type: 'code' } },
+  };
+  story.argTypes = {
     text: {
       control: 'text',
       description: 'Overwritten button text',
@@ -20,49 +27,44 @@ export default {
         'Position of the tooltip respect to the element making it visible: top / bottom / left / right',
       name: 'position',
     },
-  },
-  args: {
-    text: 'Custom text',
-    position: '',
-  },
+  };
+  story.args = args;
+  return story;
 };
 
-export const EduTooltipDefaultPositionBottom = {
-  args: {},
+const defaultArgs = {
+  text: 'Custom text',
+  position: '',
 };
 
-export const EduTooltipInvalidPositionPropBottom = {
-  args: {
-    position: 'Edu',
-  },
-};
+export const EduTooltipDefaultPositionBottom = createStory({ ...defaultArgs });
 
-export const EduTooltipPositionBottom = {
-  args: {
-    position: 'bottom',
-  },
-};
+export const EduTooltipInvalidPositionPropBottom = createStory({
+  ...defaultArgs,
+  position: 'Edu',
+});
 
-export const EduTooltipPositionTop = {
-  args: {
-    position: 'top',
-  },
-};
+export const EduTooltipPositionBottom = createStory({
+  ...defaultArgs,
+  position: 'bottom',
+});
 
-export const EduTooltipPositionRight = {
-  args: {
-    position: 'right',
-  },
-};
+export const EduTooltipPositionTop = createStory({
+  ...defaultArgs,
+  position: 'top',
+});
 
-export const EduTooltipPositionLeft = {
-  args: {
-    position: 'left',
-  },
-};
+export const EduTooltipPositionRight = createStory({
+  ...defaultArgs,
+  position: 'right',
+});
 
-export const EduTooltipPositionLeftCaseInsensitive = {
-  args: {
-    position: 'LEFT',
-  },
-};
+export const EduTooltipPositionLeft = createStory({
+  ...defaultArgs,
+  position: 'left',
+});
+
+export const EduTooltipPositionLeftCaseInsensitive = createStory({
+  ...defaultArgs,
+  position: 'LEFT',
+});

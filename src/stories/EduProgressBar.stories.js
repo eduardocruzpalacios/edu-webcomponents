@@ -4,99 +4,57 @@ import '../EduProgressBar.js';
 export default {
   title: 'Edu web components/EduProgressBar',
   tags: ['autodocs'],
-  render: ({ value, max, showLabel }) =>
-    html`<edu-progress-bar
+};
+
+const createStory = args => {
+  const story = ({ value, max, showLabel } = args) => html`
+    <edu-progress-bar
       .value=${value}
       .max=${max}
       ?showLabel=${showLabel}
-    ></edu-progress-bar>`,
-  argTypes: {
+    ></edu-progress-bar>
+  `;
+  story.parameters = {
+    controls: { expanded: true },
+    docs: { source: { type: 'code' } },
+  };
+  story.argTypes = {
     value: {
-      value: 'number',
+      control: 'number',
       description: 'Sets the percentage to which the progress bar is filled in',
       name: 'value',
     },
     max: {
-      value: 'number',
+      control: 'number',
       description: 'Sets the value to which the percentage is calculated',
       name: 'max',
     },
     showLabel: {
-      value: 'boolean',
+      control: 'boolean',
       description: 'Shows label of percentage filled in',
       name: 'showLabel',
     },
-  },
-  args: {
-    value: 0,
-    max: 100,
-    showLabel: false,
-  },
+  };
+  story.args = args;
+  return story;
 };
 
-export const EduProgressBarDefault = {
-  args: {},
+const defaultArgs = {
+  value: 0,
+  max: 100,
+  showLabel: false,
 };
 
-export const EduProgressBar25 = {
-  args: {
-    value: 25,
-  },
-};
-export const EduProgressBar50 = {
-  args: {
-    value: 50,
-  },
-};
-export const EduProgressBar50WithMaxChanged = {
-  args: {
-    value: 25,
-    max: 50,
-  },
-};
-export const EduProgressBar75 = {
-  args: {
-    value: 75,
-  },
-};
-export const EduProgressBar100 = {
-  args: {
-    value: 100,
-  },
-};
+export const EduProgressBarDefault = createStory({ ...defaultArgs });
+export const EduProgressBar25 = createStory({ ...defaultArgs, value: 25 });
+export const EduProgressBar50 = createStory({ ...defaultArgs, value: 50 });
+export const EduProgressBar50WithMaxChanged = createStory({ ...defaultArgs, value: 25, max: 50 });
+export const EduProgressBar75 = createStory({ ...defaultArgs, value: 75 });
+export const EduProgressBar100 = createStory({ ...defaultArgs, value: 100 });
 
-export const EduProgressBarWithLabel = {
-  args: { showLabel: true },
-};
-
-export const EduProgressBar25WithLabel = {
-  args: {
-    value: 25,
-    showLabel: true,
-  },
-};
-export const EduProgressBar50WithLabel = {
-  args: {
-    value: 50,
-    showLabel: true,
-  },
-};
-export const EduProgressBar50WithLabelAndMaxChanged = {
-  args: {
-    value: 25,
-    max: 50,
-    showLabel: true,
-  },
-};
-export const EduProgressBar75WithLabel = {
-  args: {
-    value: 75,
-    showLabel: true,
-  },
-};
-export const EduProgressBar100WithLabel = {
-  args: {
-    value: 100,
-    showLabel: true,
-  },
-};
+export const EduProgressBarWithLabel = createStory({ ...defaultArgs, showLabel: true });
+export const EduProgressBar25WithLabel = createStory({ ...defaultArgs, value: 25, showLabel: true });
+export const EduProgressBar50WithLabel = createStory({ ...defaultArgs, value: 50, showLabel: true });
+export const EduProgressBar50WithLabelAndMaxChanged = createStory({ ...defaultArgs, value: 25, max: 50, showLabel: true });
+export const EduProgressBar75WithLabel = createStory({ ...defaultArgs, value: 75, showLabel: true });
+export const EduProgressBar100WithLabel = createStory({ ...defaultArgs, value: 100, showLabel: true });
