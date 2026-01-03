@@ -4,9 +4,17 @@ import '../EduButton.js';
 export default {
   title: 'Edu web components/EduButton',
   tags: ['autodocs'],
-  render: ({ text, disabled }) =>
-    html`<edu-button .text=${text} ?disabled=${disabled}></edu-button>`,
-  argTypes: {
+};
+
+const createStory = args => {
+  const story = ({ text, disabled } = args) => html`
+    <edu-button .text=${text} ?disabled=${disabled}></edu-button>
+  `;
+  story.parameters = {
+    controls: { expanded: true },
+    docs: { source: { type: 'code' } },
+  };
+  story.argTypes = {
     text: {
       control: 'text',
       description: 'Overwritten button text',
@@ -17,24 +25,16 @@ export default {
       description: 'Disable button',
       name: 'disabled',
     },
-  },
-  args: {
-    text: 'Default text',
-  },
+  };
+  story.args = args;
+  return story;
 };
 
-export const DefaultButton = {
-  args: {},
+const defaultArgs = {
+  text: 'Default text',
+  disabled: false,
 };
 
-export const ButtonWithTextChanged = {
-  args: {
-    text: 'Custom text',
-  },
-};
-
-export const ButtonDisabled = {
-  args: {
-    disabled: true,
-  },
-};
+export const DefaultButton = createStory({ ...defaultArgs });
+export const ButtonWithTextChanged = createStory({ ...defaultArgs, text: 'Custom text' });
+export const ButtonDisabled = createStory({ ...defaultArgs, disabled: true });
