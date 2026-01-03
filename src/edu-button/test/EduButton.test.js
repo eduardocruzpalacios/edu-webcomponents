@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../src/edu-button/src/EduButton.js';
+import '../src/EduButton.js';
 
 const textDefault = 'Default text';
 
