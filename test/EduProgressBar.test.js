@@ -17,7 +17,7 @@ describe('EduProgressBar', () => {
 
   it('renders with default values (with label)', async () => {
     const el = await fixture(
-      html`<edu-progress-bar .showLabel=${true}></edu-progress-bar>`,
+      html`<edu-progress-bar .showLabel=${true}></edu-progress-bar>`
     );
 
     const bar = el.shadowRoot.querySelector('.bar-fill');
@@ -31,7 +31,7 @@ describe('EduProgressBar', () => {
 
   it('calculates percentage correctly', async () => {
     const el = await fixture(
-      html`<edu-progress-bar .value=${25} .max=${50}></edu-progress-bar>`,
+      html`<edu-progress-bar .value=${25} .max=${50}></edu-progress-bar>`
     );
 
     const bar = el.shadowRoot.querySelector('.bar-fill');
@@ -47,7 +47,7 @@ describe('EduProgressBar', () => {
         .value=${25}
         .max=${50}
         .showLabel=${true}
-      ></edu-progress-bar>`,
+      ></edu-progress-bar>`
     );
 
     const bar = el.shadowRoot.querySelector('.bar-fill');
@@ -59,7 +59,7 @@ describe('EduProgressBar', () => {
 
   it('caps percentage at 100%', async () => {
     const el = await fixture(
-      html`<edu-progress-bar .value=${200} .max=${100}></edu-progress-bar>`,
+      html`<edu-progress-bar .value=${200} .max=${100}></edu-progress-bar>`
     );
     const bar = el.shadowRoot.querySelector('.bar-fill');
     const label = el.shadowRoot.querySelector('.label');
@@ -74,7 +74,7 @@ describe('EduProgressBar', () => {
         .value=${200}
         .max=${100}
         .showLabel=${true}
-      ></edu-progress-bar>`,
+      ></edu-progress-bar>`
     );
 
     const bar = el.shadowRoot.querySelector('.bar-fill');
@@ -86,7 +86,7 @@ describe('EduProgressBar', () => {
 
   it('handles invalid max', async () => {
     const el = await fixture(
-      html`<edu-progress-bar .value=${50} .max=${0}></edu-progress-bar>`,
+      html`<edu-progress-bar .value=${50} .max=${0}></edu-progress-bar>`
     );
 
     const bar = el.shadowRoot.querySelector('.bar-fill');
@@ -102,7 +102,7 @@ describe('EduProgressBar', () => {
         .value=${50}
         .max=${0}
         .showLabel=${true}
-      ></edu-progress-bar>`,
+      ></edu-progress-bar>`
     );
 
     const bar = el.shadowRoot.querySelector('.bar-fill');
@@ -117,7 +117,7 @@ describe('EduProgressBar', () => {
       html`<edu-progress-bar
         .value=${50}
         .showLabel=${false}
-      ></edu-progress-bar>`,
+      ></edu-progress-bar>`
     );
 
     const label = el.shadowRoot.querySelector('.label');
@@ -130,7 +130,7 @@ describe('EduProgressBar', () => {
       html`<edu-progress-bar
         .value=${50}
         .showLabel=${true}
-      ></edu-progress-bar>`,
+      ></edu-progress-bar>`
     );
 
     const label = el.shadowRoot.querySelector('.label');
@@ -146,7 +146,7 @@ describe('EduProgressBar', () => {
 
   it('is accessible by default (with value)', async () => {
     const el = await fixture(
-      html`<edu-progress-bar .value=${50}></edu-progress-bar>`,
+      html`<edu-progress-bar .value=${50}></edu-progress-bar>`
     );
 
     await expect(el).to.be.accessible();
@@ -154,7 +154,7 @@ describe('EduProgressBar', () => {
 
   it('is accessible (with label)', async () => {
     const el = await fixture(
-      html`<edu-progress-bar .showLabel=${true}></edu-progress-bar>`,
+      html`<edu-progress-bar .showLabel=${true}></edu-progress-bar>`
     );
 
     await expect(el).to.be.accessible();
@@ -165,7 +165,7 @@ describe('EduProgressBar', () => {
       html`<edu-progress-bar
         .value=${50}
         .showLabel=${true}
-      ></edu-progress-bar>`,
+      ></edu-progress-bar>`
     );
 
     await expect(el).to.be.accessible();

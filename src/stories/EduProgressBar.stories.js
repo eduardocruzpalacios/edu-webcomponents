@@ -48,13 +48,41 @@ const defaultArgs = {
 export const EduProgressBarDefault = createStory({ ...defaultArgs });
 export const EduProgressBar25 = createStory({ ...defaultArgs, value: 25 });
 export const EduProgressBar50 = createStory({ ...defaultArgs, value: 50 });
-export const EduProgressBar50WithMaxChanged = createStory({ ...defaultArgs, value: 25, max: 50 });
+export const EduProgressBar50WithMaxChanged = createStory({
+  ...defaultArgs,
+  value: 25,
+  max: 50,
+});
 export const EduProgressBar75 = createStory({ ...defaultArgs, value: 75 });
 export const EduProgressBar100 = createStory({ ...defaultArgs, value: 100 });
 
-export const EduProgressBarWithLabel = createStory({ ...defaultArgs, showLabel: true });
-export const EduProgressBar25WithLabel = createStory({ ...defaultArgs, value: 25, showLabel: true });
-export const EduProgressBar50WithLabel = createStory({ ...defaultArgs, value: 50, showLabel: true });
-export const EduProgressBar50WithLabelAndMaxChanged = createStory({ ...defaultArgs, value: 25, max: 50, showLabel: true });
-export const EduProgressBar75WithLabel = createStory({ ...defaultArgs, value: 75, showLabel: true });
-export const EduProgressBar100WithLabel = createStory({ ...defaultArgs, value: 100, showLabel: true });
+export const EduProgressBarWithLabel = createStory({
+  ...defaultArgs,
+  showLabel: true,
+});
+export const EduProgressBar25WithLabel = createStory({
+  ...defaultArgs,
+  value: 25,
+  showLabel: true,
+});
+export const EduProgressBar50WithLabel = createStory({
+  ...defaultArgs,
+  value: 50,
+  showLabel: true,
+});
+export const EduProgressBar50WithLabelAndMaxChanged = createStory({
+  ...defaultArgs,
+  value: 25,
+  max: 50,
+  showLabel: true,
+});
+export const EduProgressBar75WithLabel = createStory({
+  ...defaultArgs,
+  value: 75,
+  showLabel: true,
+});
+export const EduProgressBar100WithLabel = createStory({
+  ...defaultArgs,
+  value: 100,
+  showLabel: true,
+});

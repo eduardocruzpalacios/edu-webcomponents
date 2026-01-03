@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../src/EduButton.js';
+import '../src/edu-button/src/EduButton.js';
 
 const textDefault = 'Default text';
 
@@ -48,7 +48,7 @@ describe('EduButton', () => {
   it('allows overriding aria-label via attribute', async () => {
     const ariaLabel = 'Custom label';
     const el = await fixture(
-      html`<edu-button aria-label=${ariaLabel}></edu-button>`,
+      html`<edu-button aria-label=${ariaLabel}></edu-button>`
     );
     const button = el.shadowRoot.querySelector('button');
     expect(button.getAttribute('aria-label')).to.equal(ariaLabel);

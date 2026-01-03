@@ -7,7 +7,7 @@
 module.exports = {
   target: (
     dependencyName,
-    [{ semver, version, operator, major, minor, patch, release, build }],
+    [{ semver, version, operator, major, minor, patch, release, build }]
   ) => {
     if (dependencyName === 'lit') {
       return 'minor';

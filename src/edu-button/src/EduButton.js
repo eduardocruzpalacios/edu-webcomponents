@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit';
-import { colorsConstants } from './stylesConstants.js';
+import { colorsConstants } from '../../stylesConstants.js';
 
 export class EduButton extends LitElement {
   static styles = [
