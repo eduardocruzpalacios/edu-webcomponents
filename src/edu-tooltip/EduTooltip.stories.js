@@ -1,8 +1,9 @@
 import { html } from 'lit';
-import '../EduTooltip.js';
+import './index.js';
 
 export default {
   title: 'Edu web components/EduTooltip',
+  tags: ['autodocs'],
 };
 
 const createStory = args => {
