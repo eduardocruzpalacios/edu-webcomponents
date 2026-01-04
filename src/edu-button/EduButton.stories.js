@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import './src/EduButton.js';
+import './index.js';
 
 export default {
   title: 'Edu web components/EduButton',

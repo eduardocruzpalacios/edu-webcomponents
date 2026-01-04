@@ -1,5 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/EduTooltip.js';
+import '../index.js';
 
 describe('EduTooltip', () => {
   it('is not visible by default', async () => {

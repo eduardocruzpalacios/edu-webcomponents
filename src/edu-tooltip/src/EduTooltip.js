@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import { colorsConstants } from './stylesConstants.js';
+import { colorsConstants } from '../../stylesConstants.js';
 
 const POSITION = {
   BOTTOM: 'bottom',
