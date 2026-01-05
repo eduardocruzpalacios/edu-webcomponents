@@ -1,6 +1,5 @@
-// test/edu-progress-bar.test.js
 import { html, fixture, expect } from '@open-wc/testing';
-import '../src/EduProgressBar.js'; // ajusta la ruta si es necesario
+import '../index.js';
 
 describe('EduProgressBar', () => {
   it('renders with default values', async () => {
