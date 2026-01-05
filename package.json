@@ -31,7 +31,8 @@
     "test:watch": "web-test-runner --watch",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release": "release-it"
   },
   "dependencies": {
     "lit": "^2.8.0"
@@ -56,6 +57,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^10.5.4",
     "prettier": "^2.8.8",
+    "release-it": "^19.2.2",
     "storybook": "^8.1.10"
   },
   "customElements": "custom-elements.json",
