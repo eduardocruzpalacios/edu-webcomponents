@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import '../EduProgressBar.js';
+import './index.js';
 
 export default {
   title: 'Edu web components/EduProgressBar',
