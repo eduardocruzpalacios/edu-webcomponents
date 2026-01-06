@@ -8,7 +8,8 @@ export const colorsConstants = css`
 
     --blackLight: #333;
 
-    --greyLight: #eee;
+    --greyLight: #ddd;
+    --greyDark: #aaa;
 
     --disabled: #ccc;
   }
