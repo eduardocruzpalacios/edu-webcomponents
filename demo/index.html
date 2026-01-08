@@ -1,29 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
-</head>
-<body>
-  <div id="demo"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu Web Components - Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../index.js';
+      body {
+        background: #fafafa;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+          'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
 
-    const textButton = 'This is a button';
-    render(
-      html`
-        <h1>Edu web components library</h1>
-        <edu-button .text=${textButton}>
-        </edu-button>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
-</body>
+      #demo {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        color: #666;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .section {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .section h2 {
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 0.5rem;
+      }
+
+      .section p {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+
+      .demo-item {
+        margin-top: 1.5rem;
+      }
+
+      .demo-label {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .progress-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .skeleton-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .tooltip-group {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      code {
+        background: #f4f4f4;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+
+    <script type="module">
+      import { html, render } from 'lit';
+      import '../index.js';
+
+      render(
+        html`
+          <h1>Edu Web Components Library</h1>
+          <p class="subtitle">
+            A collection of reusable web components built with Lit
+          </p>
+
+          <!-- Button Component -->
+          <section class="section">
+            <h2>Button</h2>
+            <p>A customizable button component with different states.</p>
+
+            <div class="demo-item">
+              <div class="demo-label">Default Button</div>
+              <div class="button-group">
+                <edu-button .text=${'Click Me'}></edu-button>
+              </div>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Disabled Button</div>
+              <div class="button-group">
+                <edu-button .text=${'Disabled'} .disabled=${true}></edu-button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Divider Component -->
+          <section class="section">
+            <h2>Divider</h2>
+            <p>A horizontal divider to separate content sections.</p>
+
+            <div class="demo-item">
+              <div class="demo-label">Simple Divider</div>
+              <edu-divider></edu-divider>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Divider with Label</div>
+              <edu-divider .label=${'OR'}></edu-divider>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Divider with Text</div>
+              <edu-divider .label=${'Section Break'}></edu-divider>
+            </div>
+          </section>
+
+          <!-- Loading Spinner Component -->
+          <section class="section">
+            <h2>Loading Spinner</h2>
+            <p>An animated loading spinner for indicating loading states.</p>
+
+            <div class="demo-item">
+              <div class="demo-label">Default Spinner</div>
+              <edu-loading-spinner></edu-loading-spinner>
+            </div>
+          </section>
+
+          <!-- Progress Bar Component -->
+          <section class="section">
+            <h2>Progress Bar</h2>
+            <p>A progress bar to visualize completion or loading progress.</p>
+
+            <div class="demo-item">
+              <div class="demo-label">Progress at 25%</div>
+              <edu-progress-bar
+                .value=${25}
+                .max=${100}
+                .showLabel=${true}
+              ></edu-progress-bar>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Progress at 50%</div>
+              <edu-progress-bar
+                .value=${50}
+                .max=${100}
+                .showLabel=${true}
+              ></edu-progress-bar>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Progress at 75%</div>
+              <edu-progress-bar
+                .value=${75}
+                .max=${100}
+                .showLabel=${true}
+              ></edu-progress-bar>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Complete (100%)</div>
+              <edu-progress-bar
+                .value=${100}
+                .max=${100}
+                .showLabel=${true}
+              ></edu-progress-bar>
+            </div>
+          </section>
+
+          <!-- Skeleton Text Component -->
+          <section class="section">
+            <h2>Skeleton Text</h2>
+            <p>Skeleton loaders to show content placeholders during loading.</p>
+
+            <div class="demo-item">
+              <div class="demo-label">Single Line</div>
+              <edu-skeleton-text
+                .width=${'100%'}
+                .lines=${1}
+              ></edu-skeleton-text>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Three Lines</div>
+              <edu-skeleton-text
+                .width=${'100%'}
+                .lines=${3}
+              ></edu-skeleton-text>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Short Width</div>
+              <edu-skeleton-text
+                .width=${'50%'}
+                .lines=${2}
+              ></edu-skeleton-text>
+            </div>
+          </section>
+
+          <!-- Tooltip Component -->
+          <section class="section">
+            <h2>Tooltip</h2>
+            <p>Hover over elements to see tooltips in different positions.</p>
+
+            <div class="tooltip-group">
+              <div class="demo-item">
+                <div class="demo-label">Bottom (default)</div>
+                <edu-tooltip
+                  .text=${'This is a bottom tooltip'}
+                  .position=${'bottom'}
+                >
+                  <edu-button .text=${'Hover me'}></edu-button>
+                </edu-tooltip>
+              </div>
+
+              <div class="demo-item">
+                <div class="demo-label">Top</div>
+                <edu-tooltip
+                  .text=${'This is a top tooltip'}
+                  .position=${'top'}
+                >
+                  <edu-button .text=${'Hover me'}></edu-button>
+                </edu-tooltip>
+              </div>
+
+              <div class="demo-item">
+                <div class="demo-label">Left</div>
+                <edu-tooltip
+                  .text=${'This is a left tooltip'}
+                  .position=${'left'}
+                >
+                  <edu-button .text=${'Hover me'}></edu-button>
+                </edu-tooltip>
+              </div>
+
+              <div class="demo-item">
+                <div class="demo-label">Right</div>
+                <edu-tooltip
+                  .text=${'This is a right tooltip'}
+                  .position=${'right'}
+                >
+                  <edu-button .text=${'Hover me'}></edu-button>
+                </edu-tooltip>
+              </div>
+            </div>
+          </section>
+        `,
+        document.querySelector('#demo')
+      );
+    </script>
+  </body>
 </html>
