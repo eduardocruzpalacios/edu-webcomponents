@@ -6,7 +6,7 @@ export class EduLoadingSpinner extends LitElement {
     colorsConstants,
     css`
       .spinner {
-        border: 8px solid var(--primaryForeground);
+        border: 8px solid var(--greyLight);
         border-top: 8px solid var(--primary);
         border-radius: 50%;
         width: 60px;

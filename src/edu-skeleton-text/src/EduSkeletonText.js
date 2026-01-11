@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import { colorsConstants } from '../../stylesConstants.js';
 
 export class EduSkeletonText extends LitElement {
   static properties = {
@@ -14,34 +15,42 @@ export class EduSkeletonText extends LitElement {
     this.lines = 1;
   }
 
-  static styles = css`
-    :host {
-      display: grid;
-      gap: 0.5em;
-    }
-
-    .line {
-      border-radius: 4px;
-      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 37%, #e0e0e0 63%);
-      background-size: 400% 100%;
-      animation: shimmer 1.4s ease infinite;
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: 100% 0;
+  static styles = [
+    colorsConstants,
+    css`
+      :host {
+        display: grid;
+        gap: 0.5em;
       }
-      100% {
-        background-position: -100% 0;
-      }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
       .line {
-        animation: none;
+        border-radius: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--skeletonBase) 25%,
+          var(--skeletonHighlight) 37%,
+          var(--skeletonBase) 63%
+        );
+        background-size: 400% 100%;
+        animation: shimmer 1.4s ease infinite;
       }
-    }
-  `;
+
+      @keyframes shimmer {
+        0% {
+          background-position: 100% 0;
+        }
+        100% {
+          background-position: -100% 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .line {
+          animation: none;
+        }
+      }
+    `,
+  ];
 
   render() {
     return html`
