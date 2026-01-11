@@ -14,6 +14,7 @@ A modern, lightweight collection of reusable web components built with [Lit](htt
 - ♿ **Accessible** - ARIA-compliant components with keyboard support
 - 🎯 **Framework-agnostic** - Works with any JavaScript framework or vanilla JS
 - 🎨 **Customizable** - CSS custom properties for easy theming
+- 🌓 **Dark mode support** - Automatic theme switching with `@media (prefers-color-scheme: dark)`
 - 📦 **Tree-shakeable** - Import only what you need
 - ✅ **Well-tested** - Comprehensive test coverage
 
@@ -261,8 +262,32 @@ Components use CSS custom properties for easy theming. Override these in your CS
   --greyLight: #e0e0e0;
   --greyDark: #757575;
   --blackLight: #424242;
+  --skeletonBase: #e0e0e0;
+  --skeletonHighlight: #f0f0f0;
 }
 ```
+
+### 🌓 Dark Mode Support
+
+All components automatically support dark mode via `@media (prefers-color-scheme: dark)`. When your operating system or browser is set to dark mode, the components will automatically adapt with optimized color schemes:
+
+```css
+@media (prefers-color-scheme: dark) {
+  :host {
+    --primary: #4db8ff;
+    --primaryHover: #66c2ff;
+    --primaryForeground: #000;
+    --blackLight: #e0e0e0;
+    --greyLight: #3d3d3d;
+    --greyDark: #666;
+    --disabled: #555;
+    --skeletonBase: #3d3d3d;
+    --skeletonHighlight: #4d4d4d;
+  }
+}
+```
+
+No additional configuration required - dark mode works out of the box!
 
 ## 🧪 Development
 
