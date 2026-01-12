@@ -58,4 +58,4 @@ export class EduButton extends LitElement {
   }
 }
 
-window.customElements.define('edu-button', EduButton);
+customElements.define('edu-button', EduButton);

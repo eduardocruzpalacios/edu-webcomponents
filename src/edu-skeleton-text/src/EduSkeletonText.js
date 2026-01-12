@@ -66,4 +66,4 @@ export class EduSkeletonText extends LitElement {
   }
 }
 
-window.customElements.define('edu-skeleton-text', EduSkeletonText);
+customElements.define('edu-skeleton-text', EduSkeletonText);
