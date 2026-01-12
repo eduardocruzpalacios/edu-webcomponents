@@ -8,12 +8,10 @@ const POSITION = {
   RIGHT: 'right',
 };
 
-function getPositions() {
-  return Object.values(POSITION);
-}
+const VALID_POSITIONS = Object.values(POSITION);
 
 function isPositionValid(position) {
-  return getPositions().includes(position.toLowerCase());
+  return VALID_POSITIONS.includes(position.toLowerCase());
 }
 
 export class EduTooltip extends LitElement {

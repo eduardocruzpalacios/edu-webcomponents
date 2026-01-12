@@ -53,10 +53,14 @@ export class EduProgressBar extends LitElement {
     this.progressbarName = 'Progress bar';
   }
 
-  render() {
+  _calculatePercentage() {
     const safeMax = this.max > 0 ? this.max : 100;
     const safeValue = Math.max(0, this.value);
-    const percentage = Math.min(100, (safeValue / safeMax) * 100);
+    return Math.min(100, (safeValue / safeMax) * 100);
+  }
+
+  render() {
+    const percentage = this._calculatePercentage();
     const label = `${Math.round(percentage)}%`;
 
     return html`
@@ -64,8 +68,11 @@ export class EduProgressBar extends LitElement {
         class="bar-container"
         role="progressbar"
         aria-valuemin="0"
-        aria-valuemax="${safeMax}"
-        aria-valuenow="${Math.min(safeValue, safeMax)}"
+        aria-valuemax="${this.max > 0 ? this.max : 100}"
+        aria-valuenow="${Math.min(
+          Math.max(0, this.value),
+          this.max > 0 ? this.max : 100
+        )}"
         aria-label="${this.progressbarName}"
       >
         <div class="bar-fill" style="width: ${percentage}%"></div>
