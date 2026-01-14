@@ -45,7 +45,7 @@ describe('EduButton', () => {
     expect(button.getAttribute('aria-label')).to.equal(textDefault);
   });
 
-  it('allows overriding aria-label via attribute', async () => {
+  it('allows overriding aria-label via ariaLabel property', async () => {
     const ariaLabel = 'Custom label';
     const el = await fixture(
       html`<edu-button aria-label=${ariaLabel}></edu-button>`
