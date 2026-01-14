@@ -35,3 +35,9 @@ export const colorsConstants = css`
     }
   }
 `;
+
+export const typographyConstants = css`
+  :host {
+    --lineHeight: 1.5;
+  }
+`;
