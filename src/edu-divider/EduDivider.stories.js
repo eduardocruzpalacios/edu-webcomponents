@@ -7,9 +7,9 @@ export default {
 };
 
 const createStory = args => {
-  const story = ({ label } = args) => html`
+  const story = ({ label, ariaLabel } = args) => html`
     <div style="width: 400px;">
-      <edu-divider .label=${label}></edu-divider>
+      <edu-divider .label=${label} aria-label=${ariaLabel}></edu-divider>
     </div>
   `;
   story.parameters = {
@@ -22,6 +22,12 @@ const createStory = args => {
       description: 'Optional label text to display in the divider',
       name: 'label',
     },
+    ariaLabel: {
+      control: 'text',
+      description:
+        'Accessible label for screen readers. If not provided, uses the label property or defaults to "Section divider"',
+      name: 'aria-label',
+    },
   };
   story.args = args;
   return story;
@@ -29,6 +35,7 @@ const createStory = args => {
 
 const defaultArgs = {
   label: '',
+  ariaLabel: '',
 };
 
 export const Default = createStory({ ...defaultArgs });
@@ -36,4 +43,10 @@ export const Default = createStory({ ...defaultArgs });
 export const WithLabel = createStory({
   ...defaultArgs,
   label: 'Section Label',
+});
+
+export const WithCustomAriaLabel = createStory({
+  ...defaultArgs,
+  label: 'OR',
+  ariaLabel: 'Alternative login separator',
 });

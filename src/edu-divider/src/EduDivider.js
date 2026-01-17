@@ -4,11 +4,13 @@ import { colorsConstants } from '../../stylesConstants.js';
 export class EduDivider extends LitElement {
   static properties = {
     label: { type: String },
+    ariaLabel: { type: String, attribute: 'aria-label' },
   };
 
   constructor() {
     super();
     this.label = '';
+    this.ariaLabel = '';
   }
 
   static styles = [
@@ -37,11 +39,20 @@ export class EduDivider extends LitElement {
   ];
 
   render() {
+    const effectiveAriaLabel = this.ariaLabel || this.label;
+
     return html`
-      <div class="divider" role="separator" aria-orientation="horizontal">
-        <div class="line"></div>
-        ${this.label ? html`<span class="label">${this.label}</span>` : null}
-        <div class="line"></div>
+      <div
+        class="divider"
+        role="separator"
+        aria-orientation="horizontal"
+        aria-label=${effectiveAriaLabel || 'Section divider'}
+      >
+        <div class="line" aria-hidden="true"></div>
+        ${this.label
+          ? html`<span class="label" aria-hidden="true">${this.label}</span>`
+          : null}
+        <div class="line" aria-hidden="true"></div>
       </div>
     `;
   }
