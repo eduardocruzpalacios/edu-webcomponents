@@ -24,6 +24,17 @@ export class EduTooltip extends LitElement {
   constructor() {
     super();
     this._tooltipId = `tooltip-${Math.random().toString(36).slice(2)}`;
+    this._handleKeyDown = this._handleKeyDown.bind(this);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('keydown', this._handleKeyDown);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener('keydown', this._handleKeyDown);
   }
 
   updated(changedProperties) {
@@ -52,12 +63,14 @@ export class EduTooltip extends LitElement {
         white-space: nowrap;
         z-index: 10;
         opacity: 0;
-        transition: opacity 0.2s;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0.2s;
         pointer-events: none;
       }
 
       :host([visible]) .tooltip {
         opacity: 1;
+        visibility: visible;
       }
 
       .top {
@@ -94,7 +107,8 @@ export class EduTooltip extends LitElement {
     return html`
       <span
         tabindex="0"
-        aria-describedby=${this._tooltipId}
+        aria-describedby=${this.visible ? this._tooltipId : ''}
+        aria-label="${this.text || 'tooltip trigger'}"
         @mouseenter=${this._show}
         @mouseleave=${this._hide}
         @focus=${this._show}
@@ -106,6 +120,8 @@ export class EduTooltip extends LitElement {
         id=${this._tooltipId}
         class="tooltip ${positionClass}"
         role="tooltip"
+        aria-hidden=${!this.visible}
+        aria-live="polite"
       >
         ${this.text}
       </div>
@@ -118,6 +134,13 @@ export class EduTooltip extends LitElement {
 
   _hide() {
     this.visible = false;
+  }
+
+  _handleKeyDown(event) {
+    if (event.key === 'Escape' && this.visible) {
+      this._hide();
+      event.preventDefault();
+    }
   }
 }
 
