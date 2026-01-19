@@ -54,14 +54,21 @@ export class EduSkeletonText extends LitElement {
 
   render() {
     return html`
-      ${Array.from(
-        { length: this.lines },
-        () =>
-          html`<div
-            class="line"
-            style="width:${this.width}; height:${this.lineHeight};"
-          ></div>`
-      )}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-label="Loading content"
+      >
+        ${Array.from(
+          { length: this.lines },
+          () =>
+            html`<div
+              class="line"
+              style="width:${this.width}; height:${this.lineHeight};"
+              aria-hidden="true"
+            ></div>`
+        )}
+      </div>
     `;
   }
 }
