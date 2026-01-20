@@ -54,11 +54,7 @@ export class EduSkeletonText extends LitElement {
 
   render() {
     return html`
-      <div
-        role="status"
-        aria-live="polite"
-        aria-label="Loading content"
-      >
+      <div role="status" aria-live="polite" aria-label="Loading content">
         ${Array.from(
           { length: this.lines },
           () =>
