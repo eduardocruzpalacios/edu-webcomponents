@@ -58,6 +58,12 @@ A customizable button component with hover effects and disabled state.
 - `disabled` (Boolean) - Whether the button is disabled (default: `false`)
 - `aria-label` (String) - Accessibility label
 
+**Accessibility:**
+- WCAG-compliant touch targets (44×44px minimum)
+- Clear focus indicators with `focus-visible`
+- Proper ARIA labels and disabled state
+- Keyboard accessible
+
 **Usage:**
 
 ```html
@@ -95,6 +101,11 @@ A horizontal divider to visually separate content sections.
 **Properties:**
 - `label` (String) - Optional text label displayed in the center (default: `''`)
 
+**Accessibility:**
+- Uses semantic `separator` role with `aria-orientation`
+- Decorative visual elements hidden from screen readers
+- Optional label for additional context
+
 **Usage:**
 
 ```html
@@ -109,15 +120,24 @@ A horizontal divider to visually separate content sections.
 
 ### ⏳ Loading Spinner
 
-An animated circular loading spinner with smooth rotation animation.
+An animated circular loading spinner with smooth rotation animation. Includes screen reader announcements and respects reduced motion preferences.
 
 **Properties:**
-None - displays a default 60x60px spinner.
+- `label` (String) - Screen reader label for the loading state (default: `'Loading'`)
+
+**Accessibility:**
+- Announces loading state to screen readers with `role="status"`
+- Slows animation speed when `prefers-reduced-motion` is enabled
+- Customizable label for context-specific loading messages
 
 **Usage:**
 
 ```html
+<!-- Default loading spinner -->
 <edu-loading-spinner></edu-loading-spinner>
+
+<!-- Custom accessibility label -->
+<edu-loading-spinner label="Loading user data"></edu-loading-spinner>
 ```
 
 ---
@@ -131,6 +151,11 @@ A progress bar component to visualize task completion or loading progress.
 - `max` (Number) - Maximum value (default: `100`)
 - `showLabel` (Boolean) - Whether to display percentage label (default: `false`)
 - `progressbarName` (String) - Accessibility label (default: `'Progress bar'`)
+
+**Accessibility:**
+- Full ARIA progressbar implementation with `role="progressbar"`
+- Dynamic `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` attributes
+- Customizable labels for context-specific progress tracking
 
 **Usage:**
 
@@ -174,12 +199,16 @@ const interval = setInterval(() => {
 
 ### 💀 Skeleton Text
 
-Animated skeleton loader for content placeholders during loading states.
+Animated skeleton loader for content placeholders during loading states. Includes screen reader announcements and respects reduced motion preferences.
 
 **Properties:**
 - `width` (String) - Width of skeleton lines (default: `'100%'`)
 - `lineHeight` (String) - Height of each line (default: `'1em'`)
 - `lines` (Number) - Number of skeleton lines to display (default: `1`)
+
+**Accessibility:**
+- Announces loading state to screen readers with `role="status"`
+- Automatically pauses animation when `prefers-reduced-motion` is enabled
 
 **Usage:**
 
@@ -223,6 +252,11 @@ A flexible tooltip component that displays contextual information on hover.
 **Properties:**
 - `text` (String) - Tooltip content to display
 - `position` (String) - Tooltip position: `'top'`, `'bottom'`, `'left'`, or `'right'` (default: `'bottom'`)
+
+**Accessibility:**
+- Semantic `tooltip` role with proper ARIA relationships
+- Full keyboard support (hover, focus, Escape to dismiss)
+- Screen reader announcements via `aria-describedby`
 
 **Usage:**
 
