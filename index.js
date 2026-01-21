@@ -1,3 +1,4 @@
+export { EduBadge } from './src/edu-badge/index.js';
 export { EduButton } from './src/edu-button/index.js';
 export { EduDivider } from './src/edu-divider/index.js';
 export { EduLoadingSpinner } from './src/edu-loading-spinner/index.js';

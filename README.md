@@ -48,6 +48,72 @@ Or import individual components:
 
 ## 📚 Components
 
+### 🏷️ Badge
+
+A small status indicator or label component perfect for displaying counts, categories, or status information.
+
+**Properties:**
+- `text` (String) - Badge text content (default: `''`)
+- `variant` (String) - Color variant: `'default'`, `'primary'`, `'success'`, `'warning'`, `'error'`, or `'info'` (default: `'default'`)
+- `size` (String) - Size variant: `'small'`, `'medium'`, or `'large'` (default: `'medium'`)
+- `aria-label` (String) - Accessibility label
+- `aria-live` (String) - Announces dynamic changes to screen readers: `'polite'` or `'assertive'`
+- `decorative` (Boolean) - Marks badge as decorative (hidden from screen readers)
+
+**Accessibility:**
+- Uses `role="status"` for screen reader announcements (non-decorative badges)
+- Supports `aria-live` attribute for dynamic content announcements
+- Automatically adds `aria-atomic="true"` when `aria-live` is set
+- Decorative mode (`decorative` property) hides badge from screen readers with `aria-hidden="true"`
+- Customizable ARIA labels for better context
+- Semantic color choices with sufficient contrast ratios
+- Full dark mode support with optimized color schemes
+
+**Usage:**
+
+```html
+<!-- Basic badge -->
+<edu-badge text="New"></edu-badge>
+
+<!-- Colored variants -->
+<edu-badge text="Active" variant="success"></edu-badge>
+<edu-badge text="Pending" variant="warning"></edu-badge>
+<edu-badge text="Error" variant="error"></edu-badge>
+<edu-badge text="Info" variant="info"></edu-badge>
+<edu-badge text="Primary" variant="primary"></edu-badge>
+
+<!-- Different sizes -->
+<edu-badge text="Small" size="small" variant="primary"></edu-badge>
+<edu-badge text="Medium" size="medium" variant="primary"></edu-badge>
+<edu-badge text="Large" size="large" variant="primary"></edu-badge>
+
+<!-- Notification count with live updates -->
+<span>Messages 
+  <edu-badge 
+    text="5" 
+    variant="primary" 
+    size="small"
+    aria-live="polite"
+    aria-label="5 unread messages">
+  </edu-badge>
+</span>
+
+<!-- Decorative badge (category tag) -->
+<edu-badge text="JavaScript" variant="info" decorative></edu-badge>
+```
+
+**JavaScript:**
+
+```javascript
+import { EduBadge } from 'edu-webcomponents';
+
+const badge = document.querySelector('edu-badge');
+badge.text = '10';
+badge.variant = 'error';
+```
+
+---
+
 ### 🔘 Button
 
 A customizable button component with hover effects and disabled state.
