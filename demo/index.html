@@ -114,6 +114,51 @@
             A collection of reusable web components built with Lit
           </p>
 
+          <!-- Badge Component -->
+          <section class="section">
+            <h2>Badge</h2>
+            <p>Small status indicators and labels for displaying counts, categories, or status.</p>
+
+            <div class="demo-item">
+              <div class="demo-label">All Variants</div>
+              <div class="button-group">
+                <edu-badge .text=${'Default'} .variant=${'default'}></edu-badge>
+                <edu-badge .text=${'Primary'} .variant=${'primary'}></edu-badge>
+                <edu-badge .text=${'Success'} .variant=${'success'}></edu-badge>
+                <edu-badge .text=${'Warning'} .variant=${'warning'}></edu-badge>
+                <edu-badge .text=${'Error'} .variant=${'error'}></edu-badge>
+                <edu-badge .text=${'Info'} .variant=${'info'}></edu-badge>
+              </div>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">All Sizes</div>
+              <div class="button-group">
+                <edu-badge .text=${'Small'} .variant=${'primary'} .size=${'small'}></edu-badge>
+                <edu-badge .text=${'Medium'} .variant=${'primary'} .size=${'medium'}></edu-badge>
+                <edu-badge .text=${'Large'} .variant=${'primary'} .size=${'large'}></edu-badge>
+              </div>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Notification Counts</div>
+              <div class="button-group">
+                <span>Messages <edu-badge .text=${'5'} .variant=${'primary'} .size=${'small'}></edu-badge></span>
+                <span>Alerts <edu-badge .text=${'12'} .variant=${'error'} .size=${'small'}></edu-badge></span>
+                <span>Updates <edu-badge .text=${'3'} .variant=${'info'} .size=${'small'}></edu-badge></span>
+              </div>
+            </div>
+
+            <div class="demo-item">
+              <div class="demo-label">Status Badges</div>
+              <div class="button-group">
+                <edu-badge .text=${'Active'} .variant=${'success'}></edu-badge>
+                <edu-badge .text=${'Pending'} .variant=${'warning'}></edu-badge>
+                <edu-badge .text=${'Inactive'} .variant=${'error'}></edu-badge>
+              </div>
+            </div>
+          </section>
+
           <!-- Button Component -->
           <section class="section">
             <h2>Button</h2>
