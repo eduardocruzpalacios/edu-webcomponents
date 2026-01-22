@@ -18,9 +18,9 @@ export class EduSkeletonText extends LitElement {
   static styles = [
     colorsConstants,
     css`
-      :host {
+      .container {
         display: grid;
-        gap: 0.5em;
+        gap: 0.125em;
       }
 
       .line {
@@ -54,7 +54,12 @@ export class EduSkeletonText extends LitElement {
 
   render() {
     return html`
-      <div role="status" aria-live="polite" aria-label="Loading content">
+      <div
+        class="container"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading content"
+      >
         ${Array.from(
           { length: this.lines },
           () =>
