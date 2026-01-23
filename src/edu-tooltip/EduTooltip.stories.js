@@ -23,7 +23,8 @@ const createStory = args => {
       name: 'text',
     },
     position: {
-      control: 'text',
+      control: 'select',
+      options: ['top', 'bottom', 'left', 'right'],
       description:
         'Position of the tooltip respect to the element making it visible: top / bottom / left / right',
       name: 'position',
