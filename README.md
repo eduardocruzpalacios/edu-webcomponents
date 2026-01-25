@@ -48,6 +48,95 @@ Or import individual components:
 
 ## 📚 Components
 
+### 📢 Banner
+
+A full-width notification banner for displaying important messages and alerts with multiple types and positioning options.
+
+**Properties:**
+- `type` (String) - Banner type: `'info'`, `'success'`, `'warning'`, `'error'`, or `'neutral'` (default: `'info'`)
+- `message` (String) - Banner message content (default: `''`)
+- `dismissible` (Boolean) - Shows close button to dismiss the banner (default: `false`)
+- `position` (String) - Position variant: `'static'`, `'sticky'`, or `'fixed'` (default: `'static'`)
+- `icon` (String) - Custom icon (uses default icon per type if not provided)
+- `aria-label` (String) - Accessibility label
+
+**Accessibility:**
+- Uses `role="alert"` for immediate screen reader announcements
+- Customizable ARIA labels for context
+- Keyboard-accessible close button with visible focus indicators
+- Semantic color choices with sufficient contrast ratios
+- Full dark mode support
+
+**Usage:**
+
+```html
+<!-- Basic info banner -->
+<edu-banner 
+  type="info" 
+  message="This is an informational message">
+</edu-banner>
+
+<!-- Success notification -->
+<edu-banner 
+  type="success" 
+  message="Your changes have been saved successfully!">
+</edu-banner>
+
+<!-- Warning with dismiss button -->
+<edu-banner 
+  type="warning" 
+  message="Your session will expire in 5 minutes" 
+  dismissible>
+</edu-banner>
+
+<!-- Error banner -->
+<edu-banner 
+  type="error" 
+  message="Unable to process your request. Please try again.">
+</edu-banner>
+
+<!-- Sticky banner (sticks to top when scrolling) -->
+<edu-banner 
+  type="info" 
+  message="New features available!" 
+  position="sticky" 
+  dismissible>
+</edu-banner>
+
+<!-- Fixed banner (always at top of viewport) -->
+<edu-banner 
+  type="warning" 
+  message="Scheduled maintenance tonight at 10 PM" 
+  position="fixed">
+</edu-banner>
+
+<!-- Custom icon -->
+<edu-banner 
+  type="success" 
+  message="Achievement unlocked!" 
+  icon="🏆">
+</edu-banner>
+```
+
+**JavaScript:**
+
+```javascript
+import { EduBanner } from 'edu-webcomponents';
+
+const banner = document.querySelector('edu-banner');
+
+// Listen for close event
+banner.addEventListener('banner-close', () => {
+  console.log('Banner dismissed');
+});
+
+// Programmatically update banner
+banner.message = 'Updated message';
+banner.type = 'error';
+```
+
+---
+
 ### 🏷️ Badge
 
 A small status indicator or label component perfect for displaying counts, categories, or status information.
