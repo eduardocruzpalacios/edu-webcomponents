@@ -198,7 +198,9 @@ export class EduBanner extends LitElement {
   }
 
   render() {
-    const iconToDisplay = this.icon || this._getDefaultIcon();
+    const hasCustomIcon =
+      typeof this.icon === 'string' && this.icon.trim().length > 0;
+    const iconToDisplay = hasCustomIcon ? this.icon : this._getDefaultIcon();
     const computedAriaLabel =
       this.ariaLabel || `${this.type} banner: ${this.message}`;
 
