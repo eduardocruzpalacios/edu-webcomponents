@@ -14,7 +14,6 @@ const createStory = args => {
     open,
     dismissible,
     position,
-    icon,
   } = args) => html`
     <edu-toast
       .message=${message}
@@ -23,7 +22,6 @@ const createStory = args => {
       .open=${open}
       .dismissible=${dismissible}
       .position=${position}
-      .icon=${icon}
     ></edu-toast>
   `;
   story.parameters = {
@@ -63,11 +61,6 @@ const createStory = args => {
       description: 'Toast position in the viewport',
       name: 'position',
     },
-    icon: {
-      control: 'text',
-      description: 'Custom icon (overrides default)',
-      name: 'icon',
-    },
   };
   story.args = args;
   return story;
@@ -80,7 +73,6 @@ const defaultArgs = {
   open: true,
   dismissible: true,
   position: 'top-right',
-  icon: '',
 };
 
 export const SuccessTopRightInfinite = createStory({ ...defaultArgs });

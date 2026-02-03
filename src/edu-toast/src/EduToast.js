@@ -35,7 +35,6 @@ export class EduToast extends LitElement {
     open: { type: Boolean, reflect: true },
     dismissible: { type: Boolean },
     position: { type: String, reflect: true },
-    icon: { type: String },
     ariaLabel: { type: String, attribute: 'aria-label' },
   };
 
@@ -47,7 +46,6 @@ export class EduToast extends LitElement {
     this.open = false;
     this.dismissible = false;
     this.position = POSITION.TOP_RIGHT;
-    this.icon = '';
     this.ariaLabel = '';
     this._autoHideTimeout = null;
   }
@@ -246,9 +244,7 @@ export class EduToast extends LitElement {
   ];
 
   render() {
-    const hasCustomIcon =
-      typeof this.icon === 'string' && this.icon.trim().length > 0;
-    const iconToDisplay = hasCustomIcon ? this.icon : this._getDefaultIcon();
+    const iconToDisplay = this._getDefaultIcon();
     const hasMessage =
       typeof this.message === 'string' && this.message.trim().length > 0;
     const role = this.type === TYPE.ERROR ? 'alert' : 'status';

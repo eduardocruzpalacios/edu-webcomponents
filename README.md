@@ -148,7 +148,6 @@ A lightweight toast notification for brief status messages, with positioning, au
 - `open` (Boolean) - Shows or hides the toast (default: `false`)
 - `dismissible` (Boolean) - Shows close button (default: `false`)
 - `position` (String) - Position: `'top-right'`, `'top-left'`, `'bottom-right'`, `'bottom-left'` (default: `'top-right'`)
-- `icon` (String) - Custom icon (uses default icon per type if not provided)
 - `aria-label` (String) - Accessibility label
 
 **Accessibility:**
