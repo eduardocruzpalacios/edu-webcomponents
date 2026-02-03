@@ -137,6 +137,65 @@ banner.type = 'error';
 
 ---
 
+### 🍞 Toast
+
+A lightweight toast notification for brief status messages, with positioning, auto-hide, and dismissal options.
+
+**Properties:**
+- `message` (String) - Toast message content (default: `''`)
+- `type` (String) - Toast type: `'info'`, `'success'`, `'warning'`, `'error'`, or `'neutral'` (default: `'info'`)
+- `duration` (Number) - Auto-hide duration in ms (`0` disables auto-hide) (default: `3000`)
+- `open` (Boolean) - Shows or hides the toast (default: `false`)
+- `dismissible` (Boolean) - Shows close button (default: `false`)
+- `position` (String) - Position: `'top-right'`, `'top-left'`, `'bottom-right'`, `'bottom-left'` (default: `'top-right'`)
+- `icon` (String) - Custom icon (uses default icon per type if not provided)
+- `aria-label` (String) - Accessibility label
+
+**Accessibility:**
+- Uses `role="status"` (or `role="alert"` for error) with `aria-live` for announcements
+- Customizable ARIA labels for context
+- Keyboard-accessible close button with visible focus indicators
+- Semantic color choices with sufficient contrast ratios
+- Full dark mode support
+
+**Usage:**
+
+```html
+<!-- Success toast (auto-hide in 3s) -->
+<edu-toast
+  type="success"
+  message="Changes saved"
+  duration="3000"
+  open
+  dismissible
+></edu-toast>
+
+<!-- Error toast (manual dismiss) -->
+<edu-toast
+  type="error"
+  message="Something went wrong"
+  duration="0"
+  open
+  dismissible
+  position="bottom-left"
+></edu-toast>
+```
+
+**JavaScript:**
+
+```javascript
+import { EduToast } from 'edu-webcomponents';
+
+const toast = document.querySelector('edu-toast');
+
+toast.message = 'Saved!';
+toast.type = 'success';
+toast.duration = 3000;
+toast.show();
+```
+
+---
+
 ### 🏷️ Badge
 
 A small status indicator or label component perfect for displaying counts, categories, or status information.
